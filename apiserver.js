@@ -1,4 +1,5 @@
 var express = require('express');
+var craigData = require('./lib/getCraigslist.js');
 
 app = express();
 
