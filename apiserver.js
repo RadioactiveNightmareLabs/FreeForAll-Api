@@ -12,6 +12,12 @@ app.get('/', function(req, res){
   res.send('home');
 });
 
+app.get('/things', function(req, res){
+  getCraigData(function (jsonData){
+    res.send(jsonData);
+  });
+});
+
 app.use(function(req, res){
   res.status(404);
   res.send('404 - page not found');
