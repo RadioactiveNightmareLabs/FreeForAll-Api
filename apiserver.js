@@ -1,6 +1,8 @@
 var express = require('express');
 var craigData = require('./lib/getCraigslist');
-var briteData = require('./lib/getEventBrite.js');
+var briteData = require('./lib/getEventBrite');
+// var yelpData = require('./lib/getYelp');
+// var stubHub = require('./lib/getStubhub');
 
 app = express();
 
