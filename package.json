@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/trizko/free4all-api",
   "dependencies": {
-    "express": "^4.10.4"
+    "body-parser": "^1.10.0",
+    "express": "^4.10.4",
+    "underscore": "^1.7.0"
   }
 }
