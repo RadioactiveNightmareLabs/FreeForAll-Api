@@ -1,5 +1,6 @@
 var express = require('express');
-var craigData = require('./lib/getCraigslist.js');
+var craigData = require('./lib/getCraigslist');
+var briteData = require('./lib/getEventBrite.js');
 
 app = express();
 
