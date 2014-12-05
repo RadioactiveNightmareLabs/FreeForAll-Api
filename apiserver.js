@@ -1,5 +1,5 @@
 var express = require('express');
-var craigData = require('./lib/getCraigslist');
+var getCraigData = require('./lib/getCraigslist');
 var briteData = require('./lib/getEventBrite.js');
 
 app = express();
@@ -8,6 +8,12 @@ app.set('port', process.env.PORT || 3000);
 
 app.get('/', function(req, res){
   res.send('home');
+});
+
+app.get('/things', function(req, res){
+  getCraigData(function (jsonData){
+    res.send(jsonData);
+  });
 });
 
 app.use(function(req, res){
