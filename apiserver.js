@@ -1,6 +1,7 @@
 var express = require('express');
-var getCraigData = require('./lib/getCraigslist');
-var getBriteData = require('./lib/getEventBrite');
+var craigData = require('./lib/getCraigslist');
+var briteData = require('./lib/getEventBrite');
+var googData  = require('./lib/getGooglePlaces');
 
 app = express();
 
