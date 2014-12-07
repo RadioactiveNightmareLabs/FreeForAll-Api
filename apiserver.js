@@ -1,7 +1,7 @@
 var express = require('express');
-var craigData = require('./lib/getCraigslist');
-var briteData = require('./lib/getEventBrite');
-var googData  = require('./lib/getGooglePlaces');
+var getCraigData = require('./lib/getCraigslist');
+var getBriteData = require('./lib/getEventBrite');
+var getGoogData  = require('./lib/getGooglePlaces');
 
 app = express();
 
@@ -11,11 +11,23 @@ app.get('/', function(req, res){
   res.send('home');
 });
 
-app.get('/things', function(req, res){
+app.get('/things', function (req, res) {
   getCraigData(function (jsonData){
     res.send(jsonData);
   });
 });
+
+app.get('/events', function (req, res) {
+  getBriteData(function (jsonData) {
+    res.send(jsonData);
+  });
+});
+
+app.get('/places', function (req, res) {
+  getGoogData(function (jsonData) {
+    res.send(jsonData);
+  })
+})
 
 app.use(function(req, res){
   res.status(404);
