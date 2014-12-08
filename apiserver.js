@@ -29,11 +29,11 @@ app.get('/events', function (req, res) {
   });
 });
 
-// app.get('/places', function (req, res) {
-//   getGoogData(function (jsonData) {
-//     res.send(jsonData);
-//   })
-// })
+app.get('/places', function (req, res) {
+  getGoogData(function (jsonData) {
+    res.send(jsonData);
+  })
+})
 
 app.use(function(req, res){
   res.status(404);
