@@ -18,19 +18,19 @@ app.get('/', function(req, res){
 });
 
 app.get('/things', function (req, res) {
-  getCraigData(function (jsonData){
+  getCraigData.fetchData(function (jsonData){
     res.send(jsonData);
   });
 });
 
 app.get('/events', function (req, res) {
-  getBriteData(function (jsonData) {
+  getBriteData.fetchData(function (jsonData) {
     res.send(jsonData);
   });
 });
 
 app.get('/places', function (req, res) {
-  getGoogData(function (jsonData) {
+  getGoogData.fetchData(function (jsonData) {
     res.send(jsonData);
   })
 })
@@ -51,3 +51,8 @@ app.listen(app.get('port'), function(){
   app.get('port') +
   '\npress Ctrl-C to terminate');
 });
+
+setInterval(function(){
+  getBriteData.getFreeEventBriteEvents();
+  getCraigData.getFreeThings();
+}, 1000000);
