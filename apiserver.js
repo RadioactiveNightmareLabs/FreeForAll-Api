@@ -14,7 +14,8 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res){
-  res.send('home');
+  var allData = getCraigData.data.concat(getBriteData.data.concat(getGoogData));
+  res.send(allData);
 });
 
 app.get('/things', function (req, res) {
